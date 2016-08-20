@@ -40,7 +40,7 @@
   <string name="wallet_options_encrypt_keys_change">Wijzig PIN code voor betalen</string>
   <string name="wallet_options_safety">Veiligheidsvoorschriften</string>
   <string name="wallet_options_donate">Geef fooi / Doneer</string>
-  <string name="wallet_donate_address_label">Donatie aan Bitcoin Wallet</string>
+  <string name="wallet_donate_address_label_original">Donatie aan Bitcoin Wallet</string>
   <string name="wallet_low_storage_dialog_title">Interne opslag bijna vol!</string>
   <string name="wallet_low_storage_dialog_msg">Bitcoin Wallet gebruikt interne opslag voor transacties en blocks. Wanneer er te weinig opslag beschikbaar is zal het stoppen met werken en lopen uw bitcoins gevaar!\n\nWilt u de Applicatie beheer instellingen openen om ongebruikte apps te verwijderen?</string>
   <string name="wallet_low_storage_dialog_button_apps">Beheer apps</string>

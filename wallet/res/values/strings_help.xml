@@ -48,17 +48,15 @@
 			You came here either through the main screen or by clicking on a Bitcoin URL in your mobile browser.
 		</p>
 		<p>
-			First, you enter the Bitcoin address to pay to.
+			First, you specify the Bitcoin or supported ShapeShift coin address to pay to.
 			The address will autocomplete from known entries in your address book.
 			You can also scan QR codes with Bitcoin addresses or Bitcoin requests by pressing the QR button in the action bar.
 		</p>
 		<p>
-			Next, you can see how many Bitcoins you can spend at the moment.
-			Any difference to the balance from the main screen is still unconfirmed and can thus not yet be spent.
-		</p>
-		<p>
-			Last, you enter the amount to pay.
-		</p>
+            You can specify a destination coin from the dropdown menu and you can specify the amount in Bitcoin or your
+            local currency. If the coin is not Bitcoin, the transfer will be made using ShapeShift. For ShapeShift coins
+            the rate and foreign amount will be estimated unless you specify an exact foreign amount.
+        </p>
 		<p>
 			You can enter a payment while being offline.
 			It will be sent on next restart of Bitcoin Wallet.
@@ -68,6 +66,8 @@
 			Note:
 			Payments are irreversible!
 			Always check the receiving address.
+			The third-party ShapeShift API is used to send to coins other than Bitcoin. There is no guarantee that ShapeShift
+            will function correctly, or at all.
 		</p>
 	]]>
 	</string>

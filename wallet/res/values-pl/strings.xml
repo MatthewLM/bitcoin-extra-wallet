@@ -32,7 +32,7 @@
 	<string name="wallet_transactions_fragment_internal">wewnętrzny</string>
 	<string name="wallet_options_safety">Wskazówki bezpieczeństwa</string>
 	<string name="wallet_options_donate">Podaruj</string>
-	<string name="wallet_donate_address_label">Dotacje dla Bitcoin Wallet</string>
+	<string name="wallet_donate_address_label_original">Dotacje dla Bitcoin Wallet</string>
 	<string name="wallet_low_storage_dialog_title">Mało przestrzeni w pamięci wewnętrznej!</string>
 	<string name="wallet_low_storage_dialog_msg">Bitcoin Wallet używa pamięci wewnętrznej do zapisywania transakcji i bloków. Jeżeli zabraknie mu przestrzeni, portfel przestanie pracować, a Twoje Bitcoiny zostaną narażone na ryzyko!\n\nCzy chcesz otworzyć manager aplikacji, żeby odinstalować niepotrzebne aplikacje?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Zarządzaj aplikacjami</string>

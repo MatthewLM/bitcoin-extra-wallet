@@ -41,7 +41,8 @@
 	<string name="wallet_options_encrypt_keys_change">Change spending PIN</string>
 	<string name="wallet_options_safety">Safety notes</string>
 	<string name="wallet_options_donate">Tip / donate</string>
-	<string name="wallet_donate_address_label">Donation for Bitcoin Wallet</string>
+	<string name="wallet_donate_address_label_original">Donation for Original Bitcoin Wallet</string>
+	<string name="wallet_donate_address_label_extra">Donation for Extra Bitcoin Wallet</string>
 	<string name="wallet_low_storage_dialog_title">Internal device storage space low!</string>
 	<string name="wallet_low_storage_dialog_msg">Bitcoin Wallet uses internal storage for remembering transactions and blocks. If it runs out of space, it will stop working and your Bitcoins will be at risk!\n\nDo you want to open the Application Manager to uninstall unneeded apps?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Manage apps</string>
@@ -67,6 +68,18 @@
 	<string name="send_coins_fragment_receiving_address_complex">complex\naddress</string>
 	<string name="send_coins_fragment_pending">(%s waiting for confirmation)</string>
 	<string name="send_coins_fragment_amount_label">Amount to pay</string>
+
+	<string name="send_coins_shapeshift_dest_coin_text">Destination coin</string>
+	<string name="send_coins_fragment_shapeshift_foreign_label">Amount</string>
+	<string name="send_coins_fragment_shapeshift_rate_label">Rate</string>
+	<string name="send_coins_fragment_hint_shapeshift_connection_error">Could not connect to ShapeShift.</string>
+	<string name="send_coins_fragment_hint_shapeshift_parse_error">Could not understand the ShapeShift response.</string>
+	<string name="send_coins_fragment_hint_shapeshift_outside_limits">Bitcoin amount must be between %1$s and %2$s.</string>
+	<string name="send_coins_fragment_hint_shapeshift_too_small">The amount is too small.</string>
+	<string name="send_coins_fragment_hint_shapeshift_updating">Updating Information with ShapeShift…</string>
+	<string name="send_coins_fragment_hint_shapeshift_future_update">Will update in %s.</string>
+	<string name="send_coins_fragment_hint_shapeshift_estimated">The rate and foreign amount is estimated and is not guaranteed.</string>
+
 	<string name="send_coins_fragment_hint_fee">A small network fee of %s will be paid.</string>
 	<string name="send_coins_fragment_hint_dusty_send">The amount is too small to send.</string>
 	<string name="send_coins_fragment_hint_insufficient_money">Not enough available coins. You\'re missing %s.</string>
@@ -83,6 +96,7 @@
 	<string name="send_coins_fragment_insufficient_money_msg2">Do you want to pay with all you have?</string>
 	<string name="send_coins_fragment_empty_wallet_failed_title">Emptying of wallet failed</string>
 	<string name="send_coins_fragment_state_decrypting">Decrypting…</string>
+	<string name="send_coins_fragment_state_finalise_shapeshift">Shifting…</string>
 	<string name="send_coins_preparation_msg">Signing…</string>
 	<string name="send_coins_sending_msg">Sending…</string>
 	<string name="send_coins_sent_msg">Sent!</string>
@@ -291,8 +305,15 @@
 	<string name="notification_inactivity_message_donate">If you don\'t care about your coins, you could also donate them to the Bitcoin Wallet project.</string>
 	<string name="notification_inactivity_action_dismiss">Remind me later</string>
 	<string name="notification_inactivity_action_dismiss_forever">Don\'t remind me</string>
+    <string name="export_transactions_mail_subject">Bitcoin Wallet Transaction History</string>
+    <string name="export_transactions_mail_text">The attached CSV file contains the transaction history for your Bitcoin Extra wallet.</string>
+    <string name="export_transactions_mail_intent_chooser">Export transactions using…</string>
+    <string name="export_transactions_mail_intent_failed">Exporting transactions failed.</string>
+    <string name="export_transactions_dialog_success"><![CDATA[<p>Your transactions have been exported to <tt>%s</tt></p><p>If your device has a removable SD card, your transactions <i>should</i> be on that card. Do you want to archive your transactions now?</p>]]></string>
+    <string name="export_transactions_unknown">Unknown</string>
+    <string name="export_transactions_no_transactions">No transactions to export!</string>
 
-	<!-- generic buttons -->
+    <!-- generic buttons -->
 	<string name="button_ok">OK</string>
 	<string name="button_dismiss">Dismiss</string>
 	<string name="button_cancel">Cancel</string>
@@ -311,6 +332,7 @@
 	<string name="button_send_coins">Send coins</string>
 	<string name="button_scan">Scan</string>
 	<string name="button_settings">Settings</string>
+    <string name="button_export">Export Transactions</string>
 	<string name="action_show_qr">Show QR code</string>
 	<string name="action_browse">Browse</string>
 
@@ -325,5 +347,29 @@
 	<string name="error_parse">Parse error: %s</string>
 	<string name="error_http">HTTP error %1$s:\n%2$s</string>
 	<string name="error_bluetooth">Bluetooth error: %1$s</string>
+
+	<!-- Bitcoin Extra -->
+    <string name="export_transactions_progress">Exporting Transactions</string>
+	<string name="donation_dialog_title">Donation</string>
+	<string name="donate_option_original_title">For the Original Wallet</string>
+	<string name="donate_option_original_message">Make a donation for Andreas Schildbach\'s original Bitcoin Android wallet</string>
+	<string name="donate_option_extra_title">For the Extra Wallet</string>
+	<string name="donate_option_extra_message">Make a donation for the changes made in the Bitcoin Extra Android wallet by Matthew Mitchell</string>
+
+	<string name="first_time_welcome">
+Welcome to the Bitcoin Extra Wallet! This wallet is based on Andreas Schildbach\'s popular Bitcoin wallet but contains two additional features:\n
+\n
+- Export your transaction history into csv format by selecting \"Export Transactions\" in the menu.\n
+\n
+- Make payments to different cryptocurencies using inbuilt ShapeShift support. Simply scan a QR code, follow a payment link,
+or enter an address for a non-bitcoin currency. Your bitcoin will automatically be exchanged into the currency of choice.\n
+\n
+The supported ShapeShift coins are BitCrystals, Blackcoin, Clams, Counterparty, Dash, Digibyte, Dogecoin, Emercoin, Litecoin, MaidSafeCoin,
+Mastercoin, Mintcoin, Monacoin, Namecoin, Novacoin, NuBits, Peercoin, Reddcoin, Shadowcash, Startcoin, Storjcoin X, Vericoin and Vertcoin.\n
+\n
+More coins may be added in the future!
+	</string>
+    <string name="update_title">New Changes</string>
+    <string name="welcome_title">Welcome!</string>
 
 </resources>

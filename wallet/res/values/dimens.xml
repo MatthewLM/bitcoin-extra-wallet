@@ -20,5 +20,7 @@
 	<dimen name="wallet_address_qr_size">80dp</dimen>
 	<dimen name="request_coins_qr_size">128dp</dimen>
 	<dimen name="bitmap_dialog_qr_size">224dp</dimen>
+	<dimen name="donate_dialog_text_padding">5dp</dimen>
+	<dimen name="donate_dialog_row_padding">20dp</dimen>
 
 </resources>

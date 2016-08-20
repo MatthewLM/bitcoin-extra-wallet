@@ -40,7 +40,7 @@
   <string name="wallet_options_encrypt_keys_change">Cambia il PIN di spesa.</string>
   <string name="wallet_options_safety">Note di sicurezza</string>
   <string name="wallet_options_donate">Mancia / donazione</string>
-  <string name="wallet_donate_address_label">Donazione per Bitcoin Wallet</string>
+  <string name="wallet_donate_address_label_original">Donazione per Bitcoin Wallet</string>
   <string name="wallet_low_storage_dialog_title">Spazio di memorizzazione interno quasi esaurito!</string>
   <string name="wallet_low_storage_dialog_msg">Bitcoin Wallet usa lo spazio interno per ricordarsi le transizioni e i blocchi. Se non hai più spazio, l\'applicazione smetterà di funzionare e i tuoi Bitcoin saranno a rischio!\n\nVuoi aprire il gestore delle applicazioni per disinstallare le applicazioni inutili/non necessarie?</string>
   <string name="wallet_low_storage_dialog_button_apps">Gestisci applicazioni</string>

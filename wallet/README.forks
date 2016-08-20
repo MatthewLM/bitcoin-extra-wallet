@@ -1,7 +1,7 @@
 Bitcoin Wallet
 The original, since 2011. Free software, GPLv3 licensed.
 Source:  https://github.com/bitcoin-wallet/bitcoin-wallet
-Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet
+Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet
 
 
 === FORKS THAT ADD FEATURES ===
@@ -37,22 +37,22 @@ The only added feature seems to be a sliding menu, but it fails to show any scre
 
 Litecoin Wallet (old)
  Source:  https://github.com/hank/litecoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.litecoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.litecoin
 
 
 Feathercoin Wallet
  Source:  https://github.com/hank/feathercoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.feathercoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.feathercoin
 
 
 DigiByte Wallet
  Source:  https://github.com/digibyte/DigiByteAndroid
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.digibyte
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.digibyte
 
 
 GoldCoin Wallet
  Source:  https://github.com/goldcoin/goldcoin-android/
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.goldcoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.goldcoin
 
 
 Dogecoin Wallet
@@ -62,7 +62,7 @@ Dogecoin Wallet
 
 Litecoin Wallet
  Source:  https://github.com/Litecoin-Java/bitcoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet_ltc
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet_ltc
 
 
 Franko Wallet
@@ -77,12 +77,12 @@ Digitalcoin Wallet
 
 Megacoin Wallet
  Source:  https://github.com/HashEngineering/Megacoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.megacoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.megacoin
 
 
 Infinitecoin Wallet
  Source:  https://github.com/HashEngineering/infinitecoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.infinitecoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.infinitecoin
 
 
 Quark Wallet
@@ -112,7 +112,7 @@ Fedoracoin Wallet
 
 Earthcoin Wallet
  Source:  https://github.com/l0rdicon/EarthcoinAndroid
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.earthcoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.earthcoin
 
 
 Reddcoin Wallet
@@ -127,7 +127,7 @@ DopeCoin Wallet
 
 Vertcoin Wallet
  Source:  https://github.com/dayreiner/vertcoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet.vertcoin
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet.vertcoin
 
 
 Zetacoin Wallet
@@ -157,7 +157,7 @@ Casinocoin Wallet
 
 Machinecoin Wallet
  Source:  https://github.com/Gitju/bitcoin-wallet
- Install: https://play.google.com/store/apps/details?id=de.schildbach.wallet_mac
+ Install: https://play.google.com/store/apps/details?id=com.matthewmitchell.bitcoin_extra_wallet_mac
 
 
 Monacoin Wallet

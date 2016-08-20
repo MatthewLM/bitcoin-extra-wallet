@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
-	package="de.schildbach.wallet"
+	package="com.matthewmitchell.bitcoin_extra_wallet"
 	android:installLocation="internalOnly"
 	android:versionCode="248"
 	android:versionName="4.58" >
@@ -54,20 +54,20 @@
 		android:xlargeScreens="true" />
 
 	<application
-		android:name="de.schildbach.wallet.WalletApplication"
+		android:name="com.matthewmitchell.bitcoin_extra_wallet.WalletApplication"
 		android:allowBackup="false"
 		android:icon="@drawable/ic_app_color_48dp"
 		android:label="@string/app_name" >
 		<activity
-			android:name="de.schildbach.wallet.ui.WalletActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.WalletActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:exported="true"
 			android:launchMode="singleTask"
 			android:theme="@style/My.Theme" />
 
 		<activity-alias
-			android:name="de.schildbach.wallet.WalletActivity"
-			android:targetActivity="de.schildbach.wallet.ui.WalletActivity" >
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.WalletActivity"
+			android:targetActivity="com.matthewmitchell.bitcoin_extra_wallet.ui.WalletActivity" >
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 
@@ -83,7 +83,7 @@
 		</activity-alias>
 
 		<activity
-			android:name="de.schildbach.wallet.ui.send.SendCoinsActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.send.SendCoinsActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:label="@string/send_coins_activity_title"
 			android:screenOrientation="behind"
@@ -93,6 +93,32 @@
 				<action android:name="android.intent.action.VIEW" />
 
 				<data android:scheme="bitcoin" />
+
+				<!-- SHAPESHIFT URIS -->
+
+                <data android:scheme="counterparty_bcy" />
+                <data android:scheme="blackcoin" />
+                <data android:scheme="counterparty_xcp" />
+                <data android:scheme="dash" />
+                <data android:scheme="digibyte" />
+                <data android:scheme="dogecoin" />
+                <data android:scheme="emercoin" />
+                <data android:scheme="litecoin" />
+                <data android:scheme="counterparty_maid" />
+                <data android:scheme="mastercoin" />
+                <data android:scheme="mintcoin" />
+                <data android:scheme="monacoin" />
+                <data android:scheme="namecoin" />
+                <data android:scheme="novacoin" />
+                <data android:scheme="Nu" />
+                <data android:scheme="nu" />
+                <data android:scheme="ppcoin" />
+                <data android:scheme="reddcoin" />
+                <data android:scheme="shadowcoin" />
+                <data android:scheme="startcoin" />
+                <data android:scheme="counterparty_sjcx" />
+                <data android:scheme="vericoin" />
+                <data android:scheme="vertcoin" />
 
 				<category android:name="android.intent.category.DEFAULT" />
 				<category android:name="android.intent.category.BROWSABLE" />
@@ -120,42 +146,42 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="de.schildbach.wallet.ui.SendCoinsQrActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.SendCoinsQrActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:theme="@android:style/Theme.Translucent.NoTitleBar" >
 		</activity>
 		<activity
-			android:name="de.schildbach.wallet.ui.RequestCoinsActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.RequestCoinsActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:label="@string/request_coins_activity_title"
 			android:screenOrientation="behind"
 			android:theme="@style/My.Theme.ChildActivity"
 			android:windowSoftInputMode="adjustResize" />
 		<activity
-			android:name="de.schildbach.wallet.ui.AddressBookActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.AddressBookActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:label="@string/address_book_activity_title"
 			android:screenOrientation="behind"
 			android:theme="@style/My.Theme.ChildActivity" />
 		<activity
-			android:name="de.schildbach.wallet.ui.ExchangeRatesActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.ExchangeRatesActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:label="@string/exchange_rates_activity_title"
 			android:screenOrientation="behind"
 			android:theme="@style/My.Theme.ChildActivity" />
 		<activity
-			android:name="de.schildbach.wallet.ui.NetworkMonitorActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.NetworkMonitorActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:label="@string/network_monitor_activity_title"
 			android:screenOrientation="behind"
 			android:theme="@style/My.Theme.ChildActivity" />
 		<activity
-			android:name="de.schildbach.wallet.ui.preference.PreferenceActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.preference.PreferenceActivity"
 			android:label="@string/preferences_activity_title"
 			android:screenOrientation="behind"
 			android:theme="@style/My.Theme.ChildActivity" />
 		<activity
-			android:name="de.schildbach.wallet.ui.RestoreWalletActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.RestoreWalletActivity"
 			android:configChanges="orientation|keyboard|keyboardHidden"
 			android:theme="@style/My.Theme.Dialog" >
 			<intent-filter android:label="@string/import_keys_intent_filter_action" >
@@ -167,14 +193,14 @@
 			</intent-filter>
 		</activity>
 		<activity
-			android:name="de.schildbach.wallet.ui.ScanActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.ScanActivity"
 			android:configChanges="orientation|keyboard|keyboardHidden"
 			android:screenOrientation="landscape"
 			android:stateNotNeeded="true"
 			android:theme="@style/My.Theme.Fullscreen"
 			android:windowSoftInputMode="stateAlwaysHidden" />
 		<activity
-			android:name="de.schildbach.wallet.ui.send.SweepWalletActivity"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ui.send.SweepWalletActivity"
 			android:configChanges="keyboard|keyboardHidden"
 			android:label="@string/sweep_wallet_activity_title"
 			android:screenOrientation="behind"
@@ -182,21 +208,21 @@
 			android:windowSoftInputMode="adjustResize" />
 
 		<provider
-			android:name="de.schildbach.wallet.AddressBookProvider"
-			android:authorities="de.schildbach.wallet.address_book"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.AddressBookProvider"
+			android:authorities="com.matthewmitchell.bitcoin_extra_wallet.address_book"
 			android:exported="false" />
 		<provider
-			android:name="de.schildbach.wallet.ExchangeRatesProvider"
-			android:authorities="de.schildbach.wallet.exchange_rates"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.ExchangeRatesProvider"
+			android:authorities="com.matthewmitchell.bitcoin_extra_wallet.exchange_rates"
 			android:exported="false" />
 		<provider
-			android:name="de.schildbach.wallet.FileAttachmentProvider"
-			android:authorities="de.schildbach.wallet.file_attachment"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.FileAttachmentProvider"
+			android:authorities="com.matthewmitchell.bitcoin_extra_wallet.file_attachment"
 			android:exported="false"
 			android:grantUriPermissions="true" />
 
 		<receiver
-			android:name="de.schildbach.wallet.WalletBalanceWidgetProvider"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.WalletBalanceWidgetProvider"
 			android:label="Bitcoin Wallet Balance" >
 			<intent-filter>
 				<action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -208,13 +234,13 @@
 		</receiver>
 
 		<service
-			android:name="de.schildbach.wallet.service.BlockchainServiceImpl"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.service.BlockchainServiceImpl"
 			android:exported="false" />
 		<service
-			android:name="de.schildbach.wallet.offline.AcceptBluetoothService"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.offline.AcceptBluetoothService"
 			android:exported="false" />
 
-		<receiver android:name="de.schildbach.wallet.service.BootstrapReceiver" >
+		<receiver android:name="com.matthewmitchell.bitcoin_extra_wallet.service.BootstrapReceiver" >
 			<intent-filter>
 				<action android:name="android.intent.action.BOOT_COMPLETED" />
 			</intent-filter>
@@ -224,11 +250,11 @@
 		</receiver>
 
 		<service
-			android:name="de.schildbach.wallet.service.UpgradeWalletService"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.service.UpgradeWalletService"
 			android:exported="false" />
 
 		<service
-			android:name="de.schildbach.wallet.service.InactivityNotificationService"
+			android:name="com.matthewmitchell.bitcoin_extra_wallet.service.InactivityNotificationService"
 			android:exported="false" />
 
 		<meta-data

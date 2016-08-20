@@ -40,7 +40,7 @@
   <string name="wallet_options_encrypt_keys_change">Költekezési PIN megváltoztatása</string>
   <string name="wallet_options_safety">Biztonsági megjegyzések</string>
   <string name="wallet_options_donate">Borravaló / támogatás</string>
-  <string name="wallet_donate_address_label">Támogatás a Bitcoin Wallet-nek</string>
+  <string name="wallet_donate_address_label_original">Támogatás a Bitcoin Wallet-nek</string>
   <string name="wallet_low_storage_dialog_title">Kevés a hely a készülék belső tárolóján!</string>
   <string name="wallet_low_storage_dialog_msg">A Bitcoin Wallet belső tárhelyet használ a tranzakciók és blokkok megjegyzéséhez. Ha kifogy a helyből, leáll a működése és a Bitcoin-jaid veszélyben lesznek!\n\nMeg akarod nyitni az Alkalmazáskezelőt, hogy eltávolítsd a szükségtelen alkalmazásokat?</string>
   <string name="wallet_low_storage_dialog_button_apps">Alkalmazások kezelése</string>

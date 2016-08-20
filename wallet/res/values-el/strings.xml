@@ -34,7 +34,7 @@
   <string name="wallet_transactions_options_filter_sent">Απεστελμένες πληρωμές</string>
   <string name="wallet_options_safety_menu">Ασφάλεια</string>
   <string name="wallet_options_safety">Οδηγίες ασφαλείας</string>
-  <string name="wallet_donate_address_label">Δωρεά προς το Bitcoin Wallet</string>
+  <string name="wallet_donate_address_label_original">Δωρεά προς το Bitcoin Wallet</string>
   <string name="wallet_timeskew_dialog_title">Ελέγξτε τις ρυθμίσεις ώρας!</string>
   <string name="wallet_version_dialog_title">Μία νέα έκδοση είναι διαθέσιμη!</string>
   <string name="wallet_version_dialog_msg">Αυτή η έκδοση διορθώνει σημαντικά προβλήματα. Για λεπτομέρειες, δείτε το σύνολο των αλλαγών στο Google Play.</string>

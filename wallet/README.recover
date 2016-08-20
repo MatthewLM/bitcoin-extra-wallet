@@ -89,9 +89,9 @@ password.
 
 RECOVERING FROM PROTOBUF WALLET FORMAT
 
-We need wallet-tool from bitcoinj. First, in a working directory, let's get bitcoinj:
+We need wallet-tool from bitcoinj_extra. First, in a working directory, let's get bitcoinj:
 
-	git clone -b release-0.14 https://github.com/bitcoinj/bitcoinj.git
+	git clone -b release-0.14 https://github.com/bitcoinj/bitcoinj_extra.git
 
 Make sure everything is compiled and ready to go by using once:
 
