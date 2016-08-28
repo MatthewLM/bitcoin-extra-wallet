@@ -32,7 +32,7 @@
 	<string name="wallet_transactions_fragment_internal">vnútorné</string>
 	<string name="wallet_options_safety">Bezpečnosť</string>
 	<string name="wallet_options_donate">Prispieť</string>
-	<string name="wallet_donate_address_label_original">Prispieť na Bitcoin Wallet</string>
+	<string name="wallet_donate_address_label">Prispieť na Bitcoin Wallet</string>
 	<string name="wallet_low_storage_dialog_title">Málo vnútornej pamäte!</string>
 	<string name="wallet_low_storage_dialog_msg">Bitcoin Wallet používa vnútornú pamäť zariadenia na ukladanie transakcií a blokov. Ak pamäť dôjde, aplikácia prestane fungovať a vaše Bitcoiny budú ohrozené!\n\nChcete otvoriť správcu aplikácií pre odinštalovanie nepotrebných aplikácií?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Spravovať aplikácie</string>
@@ -174,9 +174,9 @@
 	<string name="report_issue_dialog_mail_intent_failed">Odosielanie hlásenia zlyhalo.</string>
 	<string name="about_title">O aplikácií</string>
 	<string name="about_license_title">Licencia</string>
-	<string name="about_credits_bitcoinj_title">Táto aplikácia používa bitcoinj %s</string>
-	<string name="about_credits_zxing_title">Táto aplikácia používa \'zxing\'</string>
-	<string name="about_credits_icon_title">Táto aplikácia používa ikonu od \'bitboy\'</string>
+	<string name="about_category_credits">Táto aplikácia používa…</string>
+	<string name="about_credits_bitcoinj_title">bitcoinj %s</string>
+	<string name="about_credits_zxing_title">ZXing</string>
 	<string name="about_community_googleplus_title">Google+ Komunita</string>
 	<string name="about_community_googleplus_summary">Diskusie o aplikácii</string>
 	<string name="about_market_app_title">Google Play stránka</string>

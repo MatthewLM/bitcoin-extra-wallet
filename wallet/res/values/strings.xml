@@ -171,6 +171,7 @@
 	<string name="transaction_row_message_purpose_raise_fee">This transaction raises the network fee for a previous payment.</string>
 	<string name="transaction_row_message_own_unbroadcasted">This payment has not been transmitted yet.</string>
 	<string name="transaction_row_message_received_direct">This payment has been received directly. There is a risk it might never become spendable.</string>
+	<string name="transaction_row_message_received_unconfirmed_delayed">The confirmation of this payment is delayed, likely due to an overload of the Bitcoin network.</string>
 	<string name="transaction_row_message_received_unconfirmed_unlocked">This payment should become spendable in a few minutes.</string>
 	<string name="transaction_row_message_received_in_conflict">This payment has an increased risk of being reversed by the sender! If you can, wait for confirmation.</string>
 	<string name="transaction_row_message_received_dead">This payment has been reversed by the sender.</string>
@@ -180,9 +181,14 @@
 	<string name="network_monitor_activity_title">Network monitor</string>
 	<string name="network_monitor_peer_list_title">Peers</string>
 	<string name="network_monitor_block_list_title">Blocks</string>
+	<string name="block_row_mining_difficulty_adjustment">Mining difficulty adjustment</string>
+	<string name="block_row_mining_reward_adjustment">Mining reward halving</string>
 	<string name="block_row_now">just now</string>
 	<string name="peer_list_fragment_empty">No peers connected</string>
 	<string name="peer_list_row_ping_time">⇆ %d&#x2009;ms</string>
+
+	<string name="restore_wallet_permission_dialog_title">Read permission missing</string>
+	<string name="restore_wallet_permission_dialog_message">In order to search for wallet backups on your external storage, you need to grant read permission.</string>
 	<string name="import_keys_dialog_title">Restore wallet</string>
 	<string name="import_keys_dialog_message">Pick a wallet backup file from external storage (%s):</string>
 	<string name="restore_wallet_dialog_replace_warning">You are about to replace your current wallet. Any coins in the current wallet will be lost unless you\'ve got a separate backup of that.</string>
@@ -197,6 +203,9 @@
 	<string name="restore_wallet_dialog_success">Wallet was restored.</string>
 	<string name="restore_wallet_dialog_success_replay">Your wallet was successfully restored. Its balance will be determined next. This will take some time.</string>
 	<string name="import_keys_dialog_failure">Wallet could not be restored:\n\n%s\n\nBad password?</string>
+
+	<string name="backup_wallet_permission_dialog_title">Write permission missing</string>
+	<string name="backup_wallet_permission_dialog_message">In order to backup your wallet to external storage, you need to grant write permission.</string>
 	<string name="export_keys_dialog_title">Back up wallet</string>
 	<string name="backup_wallet_dialog_message">Your backup will be encrypted with the chosen password and written to external storage.</string>
 	<string name="backup_wallet_dialog_warning_encrypted">Your wallet is protected by a spending PIN. Make sure you remember the PIN in addition to the backup password!</string>
@@ -228,6 +237,8 @@
 	<string name="encrypt_keys_dialog_state_done">Done.</string>
 	<string name="scan_camera_problem_dialog_title">Sorry</string>
 	<string name="scan_camera_problem_dialog_message">The camera has a problem. You probably need to restart the device.</string>
+	<string name="scan_camera_permission_dialog_title">Camera permission</string>
+	<string name="scan_camera_permission_dialog_message">In order to scan QR codes, you need to grant permission to use the camera.</string>
 	<string name="input_parser_io_error">Cannot read data:\n%s</string>
 	<string name="input_parser_cannot_classify">Cannot recognize input:\n%s</string>
 	<string name="input_parser_invalid_bitcoin_uri">Invalid Bitcoin URI:\n%s</string>
@@ -286,14 +297,16 @@
 	<string name="report_issue_dialog_collect_wallet_dump">Append wallet dump</string>
 	<string name="report_issue_dialog_mail_intent_chooser">Send report using…</string>
 	<string name="report_issue_dialog_mail_intent_failed">Sending report failed.</string>
+
 	<string name="about_title">About</string>
 	<string name="about_version_title">Version</string>
 	<string name="about_copyright_title">Copyright</string>
 	<string name="about_license_title">License</string>
 	<string name="about_source_title">Source code</string>
-	<string name="about_credits_bitcoinj_title">This app is using bitcoinj %s</string>
-	<string name="about_credits_zxing_title">This app is using \'zxing\'</string>
-	<string name="about_credits_icon_title">This app is using an icon by \'bitboy\'</string>
+	<string name="about_category_credits">This app is using…</string>
+	<string name="about_credits_bitcoinj_title">bitcoinj-extra %s, a Bitcoin protocol implementation</string>
+	<string name="about_credits_zxing_title">ZXing, a QR-code processing library</string>
+	<string name="about_credits_scrypt_title">Scrypt, implemented by Will Glozer and Colin Percival</string>
 	<string name="about_community_googleplus_title">Google+ community</string>
 	<string name="about_community_googleplus_summary">Discussions about the app</string>
 	<string name="about_market_app_title">Google Play page</string>
@@ -313,7 +326,9 @@
     <string name="export_transactions_unknown">Unknown</string>
     <string name="export_transactions_no_transactions">No transactions to export!</string>
 
-    <!-- generic buttons -->
+	<string name="appwidget_wallet_balance_title">Bitcoin balance</string>
+
+	<!-- generic buttons -->
 	<string name="button_ok">OK</string>
 	<string name="button_dismiss">Dismiss</string>
 	<string name="button_cancel">Cancel</string>

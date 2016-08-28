@@ -34,7 +34,7 @@
   <string name="wallet_options_safety_menu">Varnost</string>
   <string name="wallet_options_safety">O varnosti</string>
   <string name="wallet_options_donate">Donacije</string>
-  <string name="wallet_donate_address_label_original">Donacija za Bitcoin Wallet</string>
+  <string name="wallet_donate_address_label">Donacija za Bitcoin Wallet</string>
   <string name="wallet_low_storage_dialog_title">Na notranjem pomnilniškem mediju zmanjkuje prostora!</string>
   <string name="wallet_low_storage_dialog_msg">Bitcoin Wallet uporablja notranji pomnilnik, da si zapomni nakazila in bloke. Če tu zmanjka prostora, bo denarnica prenehala delovati in vaši novci bodo v nevarnosti!\n\nŽelite odpreti Application Manager, da boste lahko odstranili odvečne aplikacije?</string>
   <string name="wallet_low_storage_dialog_button_apps">Upravljanje z aplikacijami</string>
@@ -183,9 +183,9 @@
   <string name="about_version_title">Verzija</string>
   <string name="about_copyright_title">Avtorske pravice</string>
   <string name="about_license_title">Licenca</string>
-  <string name="about_credits_bitcoinj_title">Ta aplikacija uporablja bitcoinj %s</string>
-  <string name="about_credits_zxing_title">Ta aplikacija uporablja zxing</string>
-  <string name="about_credits_icon_title">Ta apl. uporablja ikono avtorja bitboy</string>
+  <string name="about_category_credits">Ta aplikacija uporablja…</string>
+  <string name="about_credits_bitcoinj_title">bitcoinj %s</string>
+  <string name="about_credits_zxing_title">ZXing</string>
   <string name="about_community_googleplus_title">Skupnost na Google+</string>
   <string name="about_community_googleplus_summary">Razprave o aplikaciji</string>
   <string name="about_market_app_title">Stran na Google Play</string>

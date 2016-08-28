@@ -30,7 +30,7 @@
 	<string name="wallet_transactions_fragment_coinbase">đã khai thác</string>
 	<string name="wallet_options_safety">Ghi chú an toàn</string>
 	<string name="wallet_options_donate">Gợi ý / Ủng hộ</string>
-	<string name="wallet_donate_address_label_original">Ủng hộ </string>
+	<string name="wallet_donate_address_label">Ủng hộ </string>
 	<string name="wallet_low_storage_dialog_title">Khoảng không gian lưu trữ ở thiết bị hiện rất thấp!</string>
 	<string name="wallet_low_storage_dialog_msg">Bitcoin Wallet sử dụng bộ phận lưu trữ là thẻ nhớ để ghi lại các giao dịch và block. Nếu phần dung lượng này quá ít, thì quá trình lưu trữ này sẽ dừng lại và lượng Bitcoin bạn đang dùng có thể gặp rủi ro!\n\nBạn có muốn mở phần Application Manage để gỡ bỏ các ứng dụng không cần thiết không?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Quản lý ứng dụng</string>
@@ -142,8 +142,7 @@
 	<string name="about_title">Thông tin</string>
 	<string name="about_license_title">Giấy phép</string>
 	<string name="about_credits_bitcoinj_title">Ứng dụng này đang sử dụng bitcoinj %s</string>
-	<string name="about_credits_zxing_title">Ứng dụng này sử dụng \'zxing\'</string>
-	<string name="about_credits_icon_title">Ứng dụng này sử dụng biểu tượng bởi \'bitboy\'</string>
+	<string name="about_credits_zxing_title">Ứng dụng này sử dụng ZXing</string>
 	<string name="about_market_app_title">Trang web của ứng dụng trên Google Play</string>
 	<string name="notification_coins_received_msg">đã nhận %s</string>
 	<string name="notification_peers_connected_msg">%d mạng ngang hàng đã kết nối</string>

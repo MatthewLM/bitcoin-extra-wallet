@@ -27,6 +27,7 @@ import android.os.Bundle;
 import android.preference.PreferenceFragment;
 import com.matthewmitchell.bitcoin_extra_wallet.Constants;
 import com.matthewmitchell.bitcoin_extra_wallet.WalletApplication;
+import com.matthewmitchell.bitcoin_extra_wallet.BuildConfig;
 
 import com.matthewmitchell.bitcoin_extra_wallet.R;
 
@@ -60,7 +61,7 @@ public final class AboutFragment extends PreferenceFragment
 
 		addPreferencesFromResource(R.xml.preference_about);
 
-		findPreference(KEY_ABOUT_VERSION).setSummary(application.packageInfo().versionName);
+		findPreference(KEY_ABOUT_VERSION).setSummary(application.packageInfo().versionName + (BuildConfig.DEBUG ? " (debuggable)" : ""));
 		Intent marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(Constants.MARKET_APP_URL, activity.getPackageName())));
 		if (packageManager.resolveActivity(marketIntent, 0) == null)
 			marketIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(String.format(Constants.WEBMARKET_APP_URL, activity.getPackageName())));

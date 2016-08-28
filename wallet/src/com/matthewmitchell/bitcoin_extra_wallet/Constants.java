@@ -116,7 +116,7 @@ public final class Constants
 	public static final String DEFAULT_EXCHANGE_CURRENCY = "USD";
 
 	/** Donation address for tip/donate action. */
-	public static final String DONATION_ORIGINAL = "141TVuPJsecmcWqk4CieDUsUKn4Pi4TFaD";
+	public static final String DONATION_ORIGINAL = "1Hf8g3XZnDKdCy6FDQt1DrcWz3GeiYLDRS";
 	public static final String DONATION_EXTRA = "1JfSinR8nCj6g5UqZxGQ3MPrrua91mGnYw";
 
 	/** Recipient e-mail address for reports. */
@@ -154,6 +154,8 @@ public final class Constants
 	public static final long LAST_USAGE_THRESHOLD_JUST_MS = DateUtils.HOUR_IN_MILLIS;
 	public static final long LAST_USAGE_THRESHOLD_RECENTLY_MS = 2 * DateUtils.DAY_IN_MILLIS;
 	public static final long LAST_USAGE_THRESHOLD_INACTIVE_MS = 4 * DateUtils.WEEK_IN_MILLIS;
+
+	public static final long DELAYED_TRANSACTION_THRESHOLD_MS = 2 * DateUtils.HOUR_IN_MILLIS;
 
 	public static final int SDK_DEPRECATED_BELOW = Build.VERSION_CODES.ICE_CREAM_SANDWICH;
 

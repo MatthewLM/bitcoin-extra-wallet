@@ -35,28 +35,30 @@
 			android:action="android.intent.action.VIEW"
 			android:data="https://twitter.com/#!/Matt_von_Mises" />
 	</Preference>
-	<Preference
-		android:key="about_credits_bitcoinj"
-		android:summary="https://bitcoinj_extra.github.io" >
-		<intent
-			android:action="android.intent.action.VIEW"
-			android:data="https://bitcoinj_extra.github.io" />
-	</Preference>
-	<Preference
-		android:key="about_credits_zxing"
-		android:summary="https://github.com/zxing/zxing"
-		android:title="@string/about_credits_zxing_title" >
-		<intent
-			android:action="android.intent.action.VIEW"
-			android:data="https://github.com/zxing/zxing" />
-	</Preference>
-	<Preference
-		android:key="about_credits_icon"
-		android:summary="https://bitcointalk.org/index.php?action=profile;u=2062"
-		android:title="@string/about_credits_icon_title" >
-		<intent
-			android:action="android.intent.action.VIEW"
-			android:data="https://bitcointalk.org/index.php?action=profile;u=2062" />
-	</Preference>
+	<PreferenceCategory android:title="@string/about_category_credits" >
+		<Preference
+			android:key="about_credits_bitcoinj"
+			android:summary="https://github.com/MatthewLM/bitcoinj-extra" >
+			<intent
+				android:action="android.intent.action.VIEW"
+				android:data="https://bitcoinj_extra.github.io" />
+		</Preference>
+		<Preference
+			android:key="about_credits_zxing"
+			android:summary="https://github.com/zxing/zxing"
+			android:title="@string/about_credits_zxing_title" >
+			<intent
+				android:action="android.intent.action.VIEW"
+				android:data="https://github.com/zxing/zxing" />
+		</Preference>
+		<Preference
+			android:key="about_credits_scrypt"
+			android:summary="https://github.com/wg/scrypt"
+			android:title="@string/about_credits_scrypt_title" >
+			<intent
+				android:action="android.intent.action.VIEW"
+				android:data="https://github.com/wg/scrypt" />
+		</Preference>
+	</PreferenceCategory>
 
 </PreferenceScreen>

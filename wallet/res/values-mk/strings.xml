@@ -32,7 +32,7 @@
 	<string name="wallet_transactions_fragment_internal">внатрешен</string>
 	<string name="wallet_options_safety">Безбедносни белешки</string>
 	<string name="wallet_options_donate">Бакшиш / Донирај</string>
-	<string name="wallet_donate_address_label_original">Донација за Биткоин Паричник</string>
+	<string name="wallet_donate_address_label">Донација за Биткоин Паричник</string>
 	<string name="wallet_low_storage_dialog_title">Интерниот простор за складирање на уредот е мал!</string>
 	<string name="wallet_low_storage_dialog_msg">Биткоин Паричникот користи внатрешен склад за помнење на трансакциите и блоковите. Ако снема простор, ќе престане да функционира и твоите биткоини ќе бидат изложени на ризик!\n\nДали сакаш да го отвориш Апликацискиот Менаџер и да отстраниш непотребни апликации?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Менаџирај апликации</string>
@@ -153,9 +153,9 @@
 	<string name="report_issue_dialog_mail_intent_chooser">Испрати извештај со…</string>
 	<string name="about_title">За апликацијата</string>
 	<string name="about_license_title">Лиценца</string>
-	<string name="about_credits_bitcoinj_title">Оваа апликација користи bitcoinj %s</string>
-	<string name="about_credits_zxing_title">Оваа апликација користи \'zxing\'</string>
-	<string name="about_credits_icon_title">Оваа апликација користи икона од \'bitboy\'</string>
+	<string name="about_category_credits">Оваа апликација користи…</string>
+	<string name="about_credits_bitcoinj_title">bitcoinj %s</string>
+	<string name="about_credits_zxing_title">ZXing</string>
 	<string name="about_community_googleplus_title">Google+ заедница</string>
 	<string name="about_community_googleplus_summary">Дискусија за апликацијата</string>
 	<string name="about_market_app_title">Google Play страница</string>

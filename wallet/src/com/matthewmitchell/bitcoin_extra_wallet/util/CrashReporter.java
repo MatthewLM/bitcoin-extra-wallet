@@ -25,18 +25,29 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Formatter;
+import java.util.GregorianCalendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
+import java.util.TimeZone;
 
 import org.bitcoinj_extra.core.Transaction;
 import org.bitcoinj_extra.core.TransactionOutput;
 import org.bitcoinj_extra.wallet.Wallet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.google.common.base.Charsets;
+import com.google.common.base.Joiner;
+import com.google.common.base.Strings;
+
+import com.matthewmitchell.bitcoin_extra_wallet.Configuration;
+import com.matthewmitchell.bitcoin_extra_wallet.Constants;
+import com.matthewmitchell.bitcoin_extra_wallet.WalletApplication;;
 
 import android.app.ActivityManager;
 import android.app.admin.DevicePolicyManager;
@@ -47,12 +58,6 @@ import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Build;
 
-import com.google.common.base.Charsets;
-
-import com.matthewmitchell.bitcoin_extra_wallet.Configuration;
-import com.matthewmitchell.bitcoin_extra_wallet.Constants;
-import com.matthewmitchell.bitcoin_extra_wallet.WalletApplication;
-
 /**
  * @author Andreas Schildbach
  */
@@ -61,10 +66,10 @@ public class CrashReporter
 	private static final String BACKGROUND_TRACES_FILENAME = "background.trace";
 	private static final String CRASH_TRACE_FILENAME = "crash.trace";
 
-	private static final long TIME_CREATE_APPLICATION = System.currentTimeMillis();
-
 	private static File backgroundTracesFile;
 	private static File crashTraceFile;
+
+	private static final TimeZone UTC = TimeZone.getTimeZone("UTC");
 
 	private static final Logger log = LoggerFactory.getLogger(CrashReporter.class);
 
@@ -141,21 +146,22 @@ public class CrashReporter
 		final ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
 		final DevicePolicyManager devicePolicyManager = (DevicePolicyManager) context.getSystemService(Context.DEVICE_POLICY_SERVICE);
 
-		report.append("Device Model: " + android.os.Build.MODEL + "\n");
-		report.append("Android Version: " + android.os.Build.VERSION.RELEASE + "\n");
-		report.append("Board: " + android.os.Build.BOARD + "\n");
-		report.append("Brand: " + android.os.Build.BRAND + "\n");
-		report.append("Device: " + android.os.Build.DEVICE + "\n");
-		report.append("Display: " + android.os.Build.DISPLAY + "\n");
-		report.append("Finger Print: " + android.os.Build.FINGERPRINT + "\n");
-		report.append("Host: " + android.os.Build.HOST + "\n");
-		report.append("ID: " + android.os.Build.ID + "\n");
-		// report.append("Manufacturer: " + manufacturer + "\n");
-		report.append("Product: " + android.os.Build.PRODUCT + "\n");
-		report.append("Tags: " + android.os.Build.TAGS + "\n");
-		report.append("Time: " + android.os.Build.TIME + "\n");
-		report.append("Type: " + android.os.Build.TYPE + "\n");
-		report.append("User: " + android.os.Build.USER + "\n");
+		report.append("Device Model: " + Build.MODEL + "\n");
+		report.append("Android Version: " + Build.VERSION.RELEASE + "\n");
+		report.append("ABIs: ").append(Joiner.on(", ").skipNulls().join(Strings.emptyToNull(Build.CPU_ABI), Strings.emptyToNull(Build.CPU_ABI2)))
+				.append("\n");
+		report.append("Board: " + Build.BOARD + "\n");
+		report.append("Brand: " + Build.BRAND + "\n");
+		report.append("Device: " + Build.DEVICE + "\n");
+		report.append("Display: " + Build.DISPLAY + "\n");
+		report.append("Finger Print: " + Build.FINGERPRINT + "\n");
+		report.append("Host: " + Build.HOST + "\n");
+		report.append("ID: " + Build.ID + "\n");
+		report.append("Product: " + Build.PRODUCT + "\n");
+		report.append("Tags: " + Build.TAGS + "\n");
+		report.append("Time: " + Build.TIME + "\n");
+		report.append("Type: " + Build.TYPE + "\n");
+		report.append("User: " + Build.USER + "\n");
 		report.append("Configuration: " + config + "\n");
 		report.append("Screen Layout: size " + (config.screenLayout & android.content.res.Configuration.SCREENLAYOUT_SIZE_MASK) + " long "
 				+ (config.screenLayout & android.content.res.Configuration.SCREENLAYOUT_LONG_MASK) + "\n");
@@ -216,21 +222,24 @@ public class CrashReporter
 	{
 		final PackageInfo pi = application.packageInfo();
 		final Configuration configuration = application.getConfiguration();
-		final long now = System.currentTimeMillis();
+		final Calendar calendar = new GregorianCalendar(UTC);
 
 		report.append("Version: " + pi.versionName + " (" + pi.versionCode + ")\n");
 		report.append("Package: " + pi.packageName + "\n");
 		report.append("Test/Prod: " + (Constants.TEST ? "test" : "prod") + "\n");
-		report.append("Time: " + String.format(Locale.US, "%tF %tT %tz", now, now, now) + "\n");
-		report.append("Time of launch: "
-				+ String.format(Locale.US, "%tF %tT %tz", TIME_CREATE_APPLICATION, TIME_CREATE_APPLICATION, TIME_CREATE_APPLICATION) + "\n");
-		report.append("Time of last update: " + String.format(Locale.US, "%tF %tT %tz", pi.lastUpdateTime, pi.lastUpdateTime, pi.lastUpdateTime)
-				+ "\n");
-		report.append("Time of first install: "
-				+ String.format(Locale.US, "%tF %tT %tz", pi.firstInstallTime, pi.firstInstallTime, pi.firstInstallTime) + "\n");
+		report.append("Timezone: " + TimeZone.getDefault().getID() + "\n");
+		calendar.setTimeInMillis(System.currentTimeMillis());
+		report.append("Time: " + String.format(Locale.US, "%tF %tT %tZ", calendar, calendar, calendar) + "\n");
+		calendar.setTimeInMillis(WalletApplication.TIME_CREATE_APPLICATION);
+		report.append("Time of launch: " + String.format(Locale.US, "%tF %tT %tZ", calendar, calendar, calendar) + "\n");
+		calendar.setTimeInMillis(pi.lastUpdateTime);
+		report.append("Time of last update: " + String.format(Locale.US, "%tF %tT %tZ", calendar, calendar, calendar) + "\n");
+		calendar.setTimeInMillis(pi.firstInstallTime);
+		report.append("Time of first install: " + String.format(Locale.US, "%tF %tT %tZ", calendar, calendar, calendar) + "\n");
 		final long lastBackupTime = configuration.getLastBackupTime();
-		report.append("Time of backup: "
-				+ (lastBackupTime > 0 ? String.format(Locale.US, "%tF %tT %tz", lastBackupTime, lastBackupTime, lastBackupTime) : "none") + "\n");
+		calendar.setTimeInMillis(lastBackupTime);
+		report.append(
+				"Time of backup: " + (lastBackupTime > 0 ? String.format(Locale.US, "%tF %tT %tZ", calendar, calendar, calendar) : "none") + "\n");
 		report.append("Network: " + Constants.NETWORK_PARAMETERS.getId() + "\n");
 		final Wallet wallet = application.getWallet();
 		report.append("Encrypted: " + wallet.isEncrypted() + "\n");
@@ -275,7 +284,9 @@ public class CrashReporter
 			report.append("  - ");
 
 		final Formatter formatter = new Formatter(report);
-		formatter.format(Locale.US, "%tF %tT %8d  %s\n", file.lastModified(), file.lastModified(), file.length(), file.getName());
+		final Calendar calendar = new GregorianCalendar(UTC);
+		calendar.setTimeInMillis(file.lastModified());
+		formatter.format(Locale.US, "%tF %tT %8d  %s\n", calendar, calendar, file.length(), file.getName());
 		formatter.close();
 
 		if (file.isDirectory())
@@ -293,8 +304,8 @@ public class CrashReporter
 			{
 				writer = new PrintWriter(new OutputStreamWriter(new FileOutputStream(backgroundTracesFile, true), Charsets.UTF_8));
 
-				final long now = System.currentTimeMillis();
-				writer.println(String.format(Locale.US, "\n--- collected at %tF %tT %tz on version %s (%d)", now, now, now, packageInfo.versionName,
+				final Calendar now = new GregorianCalendar(UTC);
+				writer.println(String.format(Locale.US, "\n--- collected at %tF %tT %tZ on version %s (%d)", now, now, now, packageInfo.versionName,
 						packageInfo.versionCode));
 				appendTrace(writer, throwable);
 			}

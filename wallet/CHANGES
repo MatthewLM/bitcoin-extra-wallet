@@ -1,3 +1,50 @@
+v4.68
+
+* Regression fix.
+
+v4.67
+
+* Speed up wallet decryption when using a spending PIN.
+* Minor bugfix.
+
+v4.66
+
+* Strengthen security of spending PIN.
+* Update translations from Transifex.
+
+v4.65
+
+* Fix for layout in landscape orientation.
+
+v4.64
+
+* Quick-fix regression: ANR coming from the QR code scanner back into the 'send coins' dialog.
+
+v4.63
+
+* Fix rotated camera image on some devices.
+
+v4.62
+
+* Message for a delayed confirmation of an incoming payment.
+* Minor bugfixes.
+
+v4.61
+
+* On Android 6.0 (Marshmellow) and above, you can now grant or revoke app permissions at will.
+  The current permissions are: Camera (for scanning QR codes) and Read/Write External Storage (for
+  wallet backups).
+* Fix a crash when trying to sweep a password protected paper wallet.
+* Update translations from Transifex.
+
+v4.60
+
+* Fix a crash when scanning QR codes.
+
+v4.59
+
+* Make sure the lockscreen doesn't get in the way of scanning QR codes or requesting coins.
+
 v4.58
 
 * Adjust the normal fee category.

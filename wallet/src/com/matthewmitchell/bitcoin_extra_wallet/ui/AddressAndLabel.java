@@ -22,7 +22,6 @@ import javax.annotation.Nullable;
 import org.bitcoinj_extra.core.Address;
 import org.bitcoinj_extra.core.AddressFormatException;
 import org.bitcoinj_extra.core.CoinDetails;
-import org.bitcoinj_extra.core.NetworkParameters;
 import org.bitcoinj_extra.core.WrongNetworkException;
 import org.bitcoinj_extra.params.Networks;
 
@@ -33,9 +32,6 @@ import com.google.common.base.Objects;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.matthewmitchell.bitcoin_extra_wallet.Constants;
-import com.matthewmitchell.bitcoin_extra_wallet.util.WalletUtils;
 
 /**
  * @author Andreas Schildbach

@@ -51,7 +51,6 @@ import org.bitcoinj_extra.core.listeners.AbstractPeerDataEventListener;
 import org.bitcoinj_extra.core.listeners.PeerConnectedEventListener;
 import org.bitcoinj_extra.core.listeners.PeerDataEventListener;
 import org.bitcoinj_extra.core.listeners.PeerDisconnectedEventListener;
-import org.bitcoinj_extra.net.discovery.DnsDiscovery;
 import org.bitcoinj_extra.net.discovery.MultiplexingDiscovery;
 import org.bitcoinj_extra.net.discovery.PeerDiscovery;
 import org.bitcoinj_extra.net.discovery.PeerDiscoveryException;

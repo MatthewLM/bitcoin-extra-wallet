@@ -5,20 +5,20 @@ dependencies {
     compile(project(':integration-android')) {
         exclude(group: 'com.google.android', module: 'android')
     }
-    compile 'com.android.support:support-annotations:23.1.1'
-    compile 'com.android.support:support-v4:23.1.1'
-    compile 'com.android.support:support-v13:23.1.1'
-    compile 'com.android.support:recyclerview-v7:23.1.1'
-    compile 'com.android.support:cardview-v7:23.1.1'
+    compile 'com.android.support:support-annotations:23.4.0'
+    compile 'com.android.support:support-v4:23.4.0'
+    compile 'com.android.support:support-v13:23.4.0'
+    compile 'com.android.support:recyclerview-v7:23.4.0'
+    compile 'com.android.support:cardview-v7:23.4.0'
     compile 'org.bitcoinj-extra:bitcoinj-extra-core:0.14.3'
-    compile 'com.google.protobuf:protobuf-java:2.5.0'
-    compile 'com.google.guava:guava:16.0.1'
+    compile 'com.google.protobuf:protobuf-java:2.6.1'
+    compile 'com.google.guava:guava:18.0'
     compile 'com.google.zxing:core:3.2.1'
     compile 'org.slf4j:slf4j-api:1.7.20'
-    compile('com.github.tony19:logback-android-classic:1.1.1-4') {
+    compile('com.github.tony19:logback-android-classic:1.1.1-5') {
         exclude(group: 'com.google.android', module: 'android')
     }
-    compile 'com.github.tony19:logback-android-core:1.1.1-4'
+    compile 'com.github.tony19:logback-android-core:1.1.1-5'
     compile 'com.google.code.findbugs:jsr305:2.0.3'
     compile 'dnsjava:dnsjava:2.1.6'
     compile 'org.jitsi:dnssecjava:1.1.1'
@@ -33,7 +33,7 @@ ext {
 }
 
 android {
-    compileSdkVersion 'android-21'
+    compileSdkVersion 'android-23'
     buildToolsVersion '24'
 
     lintOptions {
@@ -57,6 +57,7 @@ android {
             java.srcDirs = ['src']
             res.srcDirs = ['res']
             assets.srcDirs = ['assets']
+            jniLibs.srcDirs = ['libs']
         }
         test {
             java.srcDirs = ['test']
@@ -74,12 +75,23 @@ android {
         exclude 'org/bitcoinj_extra/crypto/cacerts'
         exclude 'org.bitcoin.production.checkpoints.txt'
         exclude 'org.bitcoin.test.checkpoints.txt'
+        exclude 'messages.properties'
+        exclude 'META-INF/services/sun.net.spi.nameservice.NameServiceDescriptor'
     }
 }
 
-task svgToPng(type: fr.avianey.androidsvgdrawable.gradle.SvgDrawableTask) {
-    from = files('graphics')
+task svgToPngMipmap(type: fr.avianey.androidsvgdrawable.gradle.SvgDrawableTask) {
+    from = files('graphics/mipmap')
+    to = file('res')
+    targetedDensities = ['hdpi', 'xhdpi', 'xxhdpi', 'xxxhdpi']
+    outputFormat = 'PNG'
+    outputType = 'mipmap'
+}
+
+task svgToPngDrawable(type: fr.avianey.androidsvgdrawable.gradle.SvgDrawableTask) {
+    from = files('graphics/drawable')
     to = file('res')
     targetedDensities = ['hdpi', 'xhdpi', 'xxhdpi']
     outputFormat = 'PNG'
+    outputType = 'drawable'
 }

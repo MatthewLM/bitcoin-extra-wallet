@@ -28,6 +28,7 @@ import com.matthewmitchell.bitcoin_extra_wallet.Configuration;
 import com.matthewmitchell.bitcoin_extra_wallet.Constants;
 import com.matthewmitchell.bitcoin_extra_wallet.WalletApplication;
 import com.matthewmitchell.bitcoin_extra_wallet.ui.WalletActivity;
+import com.matthewmitchell.bitcoin_extra_wallet.ui.send.FeeCategory;
 import com.matthewmitchell.bitcoin_extra_wallet.ui.send.SendCoinsActivity;
 
 import com.matthewmitchell.bitcoin_extra_wallet.R;
@@ -154,7 +155,7 @@ public final class InactivityNotificationService extends IntentService
 	private void handleDonate()
 	{
 		final Coin balance = wallet.getBalance(BalanceType.AVAILABLE_SPENDABLE);
-		SendCoinsActivity.startDonate(this, balance, Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+		SendCoinsActivity.startDonate(this, balance, FeeCategory.ECONOMIC, Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
 		nm.cancel(Constants.NOTIFICATION_ID_INACTIVITY);
 		sendBroadcast(new Intent(Intent.ACTION_CLOSE_SYSTEM_DIALOGS));
 	}

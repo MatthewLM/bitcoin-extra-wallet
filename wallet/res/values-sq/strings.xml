@@ -39,7 +39,7 @@
   <string name="wallet_options_encrypt_keys_change">Ndryshoni PIN-in</string>
   <string name="wallet_options_safety">Shënime të sigurisë</string>
   <string name="wallet_options_donate">Bakshish / Donacion</string>
-  <string name="wallet_donate_address_label_original">Donacion për Kuletën Bitcoin</string>
+  <string name="wallet_donate_address_label">Donacion për Kuletën Bitcoin</string>
   <string name="wallet_low_storage_dialog_title">Hapësira e diskut në pajisjen tuaj është e ulët!</string>
   <string name="wallet_low_storage_dialog_msg">Bitcoin Wallet përdor memorjen interne për të ruajtur transaksionet dhe blloqet. Nëse nuk ka hapsir të mjaftueshme, nuk do të punoj dhe monedhat tuaja do jenë ne rrezik!\n\nDëshironi të hapni Menagjerin e Aplikacioneve dhe të fshini aplikacionet që nuk ju duhen?</string>
   <string name="wallet_low_storage_dialog_button_apps">Menaxhoni programet</string>
@@ -247,9 +247,9 @@
   <string name="about_copyright_title">Copyright</string>
   <string name="about_license_title">Licenca</string>
   <string name="about_source_title">Kodi burimor</string>
-  <string name="about_credits_bitcoinj_title">Ky program përdor bitcoinj %s</string>
-  <string name="about_credits_zxing_title">Ky program përdor \'zxing\'</string>
-  <string name="about_credits_icon_title">Ky program përdor një ikon nga \'bitboy\'</string>
+  <string name="about_category_credits">Ky program përdor…</string>
+  <string name="about_credits_bitcoinj_title">bitcoinj %s</string>
+  <string name="about_credits_zxing_title">ZXing</string>
   <string name="about_community_googleplus_title">Komuniteti Google+</string>
   <string name="about_community_googleplus_summary">Diskutimet rreth ketij programi</string>
   <string name="about_market_app_title">Faqja ne Google Play</string>

@@ -43,7 +43,7 @@
 	<string name="wallet_options_encrypt_keys_change">Ausgabe-PIN ändern</string>
 	<string name="wallet_options_safety">Sicherheitshinweise</string>
 	<string name="wallet_options_donate">Spenden</string>
-	<string name="wallet_donate_address_label_original">Spende für Bitcoin Wallet</string>
+	<string name="wallet_donate_address_label">Spende für Bitcoin Wallet</string>
 	<string name="wallet_low_storage_dialog_title">Interner Speicher wird knapp!</string>
 	<string name="wallet_low_storage_dialog_msg">Bitcoin Wallet nutzt internen Speicher um sich Transaktionen und Blöcke zu merken. Wenn der
 		Speicher vollläuft, wird es nicht mehr funktionieren und deine Bitcoins sind in Gefahr!\n\nMöchtest Du die
@@ -169,6 +169,7 @@
 	<string name="transaction_row_message_purpose_raise_fee">Diese Transaktion erhöht die Netzwerk-Gebühr für eine vorherige Zahlung.</string>
 	<string name="transaction_row_message_own_unbroadcasted">Diese Zahlung ist noch nicht übertragen.</string>
 	<string name="transaction_row_message_received_direct">Diese Zahlung wurde direkt empfangen. Es besteht das Risiko, daß sie niemals verfügbar wird.</string>
+	<string name="transaction_row_message_received_unconfirmed_delayed">Die Bestätigung dieser Zahlung ist verspätet, wahrscheinlich aufgrund einer Überlastung des Bitcoin-Netzes.</string>
 	<string name="transaction_row_message_received_unconfirmed_unlocked">Diese Zahlung sollte in ein paar Minuten verfügbar werden.</string>
 	<string name="transaction_row_message_received_in_conflict">Diese Zahlung hat ein erhöhtes Risiko daß sie vom Sender rückgängig gemacht wird! Warte wenn möglich auf Bestätigung.</string>
 	<string name="transaction_row_message_received_dead">Diese Zahlung wurde vom Sender rückgängig gemacht.</string>
@@ -179,11 +180,15 @@
 	<string name="network_monitor_activity_title">Netzwerk-Monitor</string>
 	<string name="network_monitor_peer_list_title">Peers</string>
 	<string name="network_monitor_block_list_title">Blöcke</string>
+	<string name="block_row_mining_difficulty_adjustment">Anpassung der Mining-Difficulty</string>
+	<string name="block_row_mining_reward_adjustment">Halbierung des Mining-Reward</string>
 	<string name="block_row_now">gerade eben</string>
 
 	<string name="peer_list_fragment_empty">Keine Peers verbunden</string>
 	<string name="peer_list_row_ping_time">⇆ %d&#x2009;ms</string>
 
+	<string name="restore_wallet_permission_dialog_title">Lese-Berechtigung fehlt</string>
+	<string name="restore_wallet_permission_dialog_message">Um auf deinem externen Speicher nach Wallet-Sicherungen zu suchen, musst du die Berechtigung zum Lesen erteilen.</string>
 	<string name="import_keys_dialog_title">Wallet wiederherstellen</string>
 	<string name="import_keys_dialog_message">Wähle eine Sicherungsdatei vom externen Speicher (%s) aus:</string>
 	<string name="restore_wallet_dialog_replace_warning">Du bist dabei, deine aktuelle Wallet zu ersetzen. Alle Bitcoins in der aktuellen Wallet gehen dabei verloren, außer du hast diese separat gesichert.</string>
@@ -198,6 +203,9 @@
 	<string name="restore_wallet_dialog_success">Wallet wurde wiederhergestellt.</string>
 	<string name="restore_wallet_dialog_success_replay">Deine Wallet wurde erfolgreich wiederhergestellt. Jetzt wird das Guthaben ermittelt. Das wird einige Zeit dauern.</string>
 	<string name="import_keys_dialog_failure">Die Wallet konnte nicht wieder hergestellt werden:\n\n%s\n\nFalsches Passwort?</string>
+
+	<string name="backup_wallet_permission_dialog_title">Schreib-Berechtigung fehlt</string>
+	<string name="backup_wallet_permission_dialog_message">Um deine Wallet auf den externen Speicher zu sichern, musst du die Berechtigung zum Schreiben erteilen.</string>
 	<string name="export_keys_dialog_title">Wallet sichern</string>
 	<string name="backup_wallet_dialog_message">Dein Backup wird mit dem gewählten Passwort verschlüsselt und auf den externen Speicher gesichert.</string>
 	<string name="backup_wallet_dialog_warning_encrypted">Deine Wallet ist mit einer Ausgabe-PIN geschützt. Stelle sicher, daß du die PIN nicht vergisst (neben dem Backup-Passwort)!</string>
@@ -231,6 +239,8 @@
 
 	<string name="scan_camera_problem_dialog_title">Sorry</string>
 	<string name="scan_camera_problem_dialog_message">Die Kamera hat ein Problem. Evtl. musst du dein Gerät neu starten.</string>
+	<string name="scan_camera_permission_dialog_title">Kamera-Berechtigung</string>
+	<string name="scan_camera_permission_dialog_message">Um QR-Codes zu scannen, musst du die Berechtigung zur Nutzung der Kamera erteilen.</string>
 
 	<string name="input_parser_io_error">Kann Daten nicht lesen:\n%s</string>
 	<string name="input_parser_cannot_classify">Eingabe nicht erkannt:\n%s</string>
@@ -299,9 +309,10 @@
 	<string name="about_copyright_title">Urheberrecht</string>
 	<string name="about_license_title">Lizenz</string>
 	<string name="about_source_title">Quellcode</string>
-	<string name="about_credits_bitcoinj_title">Diese App nutzt bitcoinj %s</string>
-	<string name="about_credits_zxing_title">Diese App nutzt \'zxing\'</string>
-	<string name="about_credits_icon_title">Diese App nutzt ein Icon von \'bitboy\'</string>
+	<string name="about_category_credits">Diese App nutzt…</string>
+	<string name="about_credits_bitcoinj_title">bitcoinj %s, eine Bitcoin-Protokoll-Implementierung</string>
+	<string name="about_credits_zxing_title">ZXing, eine QR-Code-Bibliothek</string>
+	<string name="about_credits_scrypt_title">Scrypt, implementiert von Will Glozer und Colin Percival</string>
 	<string name="about_community_googleplus_title">Google+ Community</string>
 	<string name="about_community_googleplus_summary">Diskussionen über die App</string>
 	<string name="about_market_app_title">Eintrag bei Google Play</string>
@@ -314,6 +325,8 @@
 	<string name="notification_inactivity_message_donate">Wenn dir die Bitcoins egal sind, könntest du sie auch dem Bitcoin Wallet Projekt spenden.</string>
 	<string name="notification_inactivity_action_dismiss">Später erinnern</string>
 	<string name="notification_inactivity_action_dismiss_forever">Nicht erinnern</string>
+
+	<string name="appwidget_wallet_balance_title">Bitcoin-Guthaben</string>
 
 	<!-- generic buttons -->
 	<string name="button_ok">Ok</string>

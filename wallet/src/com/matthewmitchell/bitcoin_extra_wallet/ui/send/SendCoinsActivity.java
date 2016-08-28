@@ -23,6 +23,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import javax.annotation.Nullable;
+
 import org.bitcoinj_extra.core.Coin;
 
 import com.matthewmitchell.bitcoin_extra_wallet.Constants;
@@ -39,30 +41,36 @@ public final class SendCoinsActivity extends AbstractBindServiceActivity
 {
 	public static final String INTENT_EXTRA_PAYMENT_INTENT = "payment_intent";
 	public static final String INTENT_EXTRA_DONATE = "donate";
+	public static final String INTENT_EXTRA_FEE_CATEGORY = "fee_category";
 
-	private static void doStartActivity(final Context context, final Intent intent, final int intentFlags) {
+	private static void doStartActivity(final Context context, final Intent intent, final @Nullable FeeCategory feeCategory, final int intentFlags) {
+
+		if (feeCategory != null)
+			intent.putExtra(INTENT_EXTRA_FEE_CATEGORY, feeCategory);
 		if (intentFlags != 0)
 			intent.setFlags(intentFlags);
+
 		context.startActivity(intent);
+
 	}
 
-	public static void start(final Context context, final PaymentIntent paymentIntent, final int intentFlags)
+	public static void start(final Context context, final PaymentIntent paymentIntent, final @Nullable FeeCategory feeCategory, final int intentFlags)
 	{
 		final Intent intent = new Intent(context, SendCoinsActivity.class);
 		intent.putExtra(INTENT_EXTRA_PAYMENT_INTENT, paymentIntent);
-		doStartActivity(context, intent, intentFlags);
+		doStartActivity(context, intent, feeCategory, intentFlags);
 	}
 
 	public static void start(final Context context, final PaymentIntent paymentIntent)
 	{
-		start(context, paymentIntent, 0);
+		start(context, paymentIntent, null, 0);
 	}
 
-	public static void startDonate(final Context context, final Coin amount, final int intentFlags)
+	public static void startDonate(final Context context, final Coin amount, final @Nullable FeeCategory feeCategory, final int intentFlags)
 	{
 		final Intent intent = new Intent(context, SendCoinsActivity.class);
 		intent.putExtra(INTENT_EXTRA_DONATE, amount);
-		doStartActivity(context, intent, intentFlags);
+		doStartActivity(context, intent, feeCategory, intentFlags);
 	}
 
 	@Override

@@ -28,7 +28,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import com.matthewmitchell.bitcoin_extra_wallet.Constants;
 
 import com.matthewmitchell.bitcoin_extra_wallet.R;
 

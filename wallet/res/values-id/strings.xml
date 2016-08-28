@@ -32,7 +32,7 @@
 	<string name="wallet_transactions_fragment_internal">Internal</string>
 	<string name="wallet_options_safety">Nota keamanan</string>
 	<string name="wallet_options_donate">Tip / Donasi</string>
-	<string name="wallet_donate_address_label_original">Donasi untuk Bitcoin Wallet</string>
+	<string name="wallet_donate_address_label">Donasi untuk Bitcoin Wallet</string>
 	<string name="wallet_low_storage_dialog_title">Penyimpanan Internal tdk cukup!</string>
 	<string name="wallet_low_storage_dialog_msg">Bitcoin Wallet menggunakan penyimpanan internal untuk meyimpan transaksi dan blok. Jika kekurangan ruang, ia akan berhenti berfungsi dan Bitcoin Anda dlm bahaya!\n\nApakah Anda ingin buka Manajer Aplikasi untuk menghapus apl tak terpakai?</string>
 	<string name="wallet_low_storage_dialog_button_apps">Mengelola Apl</string>
@@ -148,9 +148,9 @@
 	<string name="report_issue_dialog_mail_intent_chooser">Kirim laporan dgn…</string>
 	<string name="about_title">Mengenai</string>
 	<string name="about_license_title">Lisensi</string>
-	<string name="about_credits_bitcoinj_title">Apl ini menggunakan bitcoinj %s</string>
-	<string name="about_credits_zxing_title">Apl ini menggunakan \'zxing\'</string>
-	<string name="about_credits_icon_title">Apl ini menggunakan ikon oleh \'bitboy\'</string>
+	<string name="about_category_credits">Apl ini menggunakan…</string>
+	<string name="about_credits_bitcoinj_title">bitcoinj %s</string>
+	<string name="about_credits_zxing_title">ZXing</string>
 	<string name="about_market_app_title">Halaman Apl Google Play</string>
 	<string name="notification_coins_received_msg">Diterima %s</string>
 	<string name="notification_peers_connected_msg">%d peer terhubung</string>
