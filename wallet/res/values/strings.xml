@@ -326,7 +326,7 @@
     <string name="export_transactions_unknown">Unknown</string>
     <string name="export_transactions_no_transactions">No transactions to export!</string>
 
-	<string name="appwidget_wallet_balance_title">Bitcoin balance</string>
+	<string name="appwidget_wallet_balance_title">Bitcoin Extra balance</string>
 
 	<!-- generic buttons -->
 	<string name="button_ok">OK</string>
