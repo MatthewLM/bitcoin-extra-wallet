@@ -29,11 +29,11 @@
 		android:title="@string/about_market_app_title" />
 	<Preference
 		android:key="about_twitter"
-		android:summary="\@bitcoin_wallet"
+		android:summary="\@Matt_von_Mises"
 		android:title="Twitter" >
 		<intent
 			android:action="android.intent.action.VIEW"
-			android:data="https://twitter.com/#!/Matt_von_Mises" />
+			android:data="https://twitter.com/Matt_von_Mises" />
 	</Preference>
 	<PreferenceCategory android:title="@string/about_category_credits" >
 		<Preference
@@ -41,7 +41,7 @@
 			android:summary="https://github.com/MatthewLM/bitcoinj-extra" >
 			<intent
 				android:action="android.intent.action.VIEW"
-				android:data="https://bitcoinj_extra.github.io" />
+				android:data="https://github.com/MatthewLM/bitcoinj-extra" />
 		</Preference>
 		<Preference
 			android:key="about_credits_zxing"
