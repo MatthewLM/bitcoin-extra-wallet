@@ -50,8 +50,8 @@ import android.widget.TextView;
 
 import com.google.common.base.Strings;
 
+import com.matthewmitchell.bitcoin_extra_wallet.Constants;
 import com.matthewmitchell.bitcoin_extra_wallet.WalletApplication;
-
 import com.matthewmitchell.bitcoin_extra_wallet.R;
 
 /**
@@ -59,7 +59,6 @@ import com.matthewmitchell.bitcoin_extra_wallet.R;
  */
 public class EncryptKeysDialogFragment extends DialogFragment
 {
-	private static final int SCRYPT_ITERATIONS_TARGET = 8192;
 
 	private static final String FRAGMENT_TAG = EncryptKeysDialogFragment.class.getName();
 
@@ -257,7 +256,7 @@ public class EncryptKeysDialogFragment extends DialogFragment
 				final KeyParameter oldKey = oldPassword != null ? wallet.getKeyCrypter().deriveKey(oldPassword) : null;
 
 				// For the new key, we create a new key crypter according to the desired parameters.
-				final KeyCrypterScrypt keyCrypter = new KeyCrypterScrypt(SCRYPT_ITERATIONS_TARGET);
+				final KeyCrypterScrypt keyCrypter = new KeyCrypterScrypt(Constants.SCRYPT_ITERATIONS_TARGET);
 				final KeyParameter newKey = newPassword != null ? keyCrypter.deriveKey(newPassword) : null;
 
 

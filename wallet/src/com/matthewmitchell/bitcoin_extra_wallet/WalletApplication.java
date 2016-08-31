@@ -40,6 +40,8 @@ import org.bitcoinj_extra.wallet.WalletProtobufSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.google.common.base.Stopwatch;
+
 import android.app.ActivityManager;
 import android.app.AlarmManager;
 import android.app.Application;
@@ -153,12 +155,14 @@ public class WalletApplication extends Application
 
 	private void afterLoadWallet()
 	{
-		wallet.autosaveToFile(walletFile, 10, TimeUnit.SECONDS, new WalletAutosaveEventListener());
+		wallet.autosaveToFile(walletFile, Constants.Files.WALLET_AUTOSAVE_DELAY_MS, TimeUnit.MILLISECONDS, new WalletAutosaveEventListener());
 
 		// clean up spam
 		wallet.cleanup();
 
-		migrateBackup();
+		// make sure there is at least one recent backup
+		if (!getFileStreamPath(Constants.Files.WALLET_KEY_BACKUP_PROTOBUF).exists())
+			backupWallet();
 	}
 
 	private void initLogging()
@@ -216,9 +220,10 @@ public class WalletApplication extends Application
 	{
 		try
 		{
-			final long start = System.currentTimeMillis();
+			final Stopwatch watch = Stopwatch.createStarted();
 			MnemonicCode.INSTANCE = new MnemonicCode(getAssets().open(BIP39_WORDLIST_FILENAME), null);
-			log.info("BIP39 wordlist loaded from: '" + BIP39_WORDLIST_FILENAME + "', took " + (System.currentTimeMillis() - start) + "ms");
+			watch.stop();
+			log.info("BIP39 wordlist loaded from: '{}', took {}", BIP39_WORDLIST_FILENAME, watch);
 		}
 		catch (final IOException x)
 		{
@@ -256,20 +261,20 @@ public class WalletApplication extends Application
 	{
 		if (walletFile.exists())
 		{
-			final long start = System.currentTimeMillis();
 
 			FileInputStream walletStream = null;
 
 			try
 			{
+				final Stopwatch watch = Stopwatch.createStarted();
 				walletStream = new FileInputStream(walletFile);
-
 				wallet = new WalletProtobufSerializer().readWallet(walletStream);
+				watch.stop();
 
 				if (!wallet.getParams().equals(Constants.NETWORK_PARAMETERS))
 					throw new UnreadableWalletException("bad wallet network parameters: " + wallet.getParams().getId());
 
-				log.info("wallet loaded from: '" + walletFile + "', took " + (System.currentTimeMillis() - start) + "ms");
+				log.info("wallet loaded from: '{}', took {}", walletFile, watch);
 			}
 			catch (final FileNotFoundException x)
 			{
@@ -380,19 +385,20 @@ public class WalletApplication extends Application
 
 	private void protobufSerializeWallet(final Wallet wallet) throws IOException
 	{
-		final long start = System.currentTimeMillis();
-
+		final Stopwatch watch = Stopwatch.createStarted();
 		wallet.saveToFile(walletFile);
+		watch.stop();
 
 		// make wallets world accessible in test mode
 		if (Constants.TEST)
 			Io.chmod(walletFile, 0777);
 
-		log.debug("wallet saved to: '" + walletFile + "', took " + (System.currentTimeMillis() - start) + "ms");
+		log.debug("wallet saved to: '{}', took {}", walletFile, watch);
 	}
 
 	public void backupWallet()
 	{
+		final Stopwatch watch = Stopwatch.createStarted();
 		final Protos.Wallet.Builder builder = new WalletProtobufSerializer().walletToProto(wallet).toBuilder();
 
 		// strip redundant
@@ -408,10 +414,12 @@ public class WalletApplication extends Application
 		{
 			os = openFileOutput(Constants.Files.WALLET_KEY_BACKUP_PROTOBUF, Context.MODE_PRIVATE);
 			walletProto.writeTo(os);
+			watch.stop();
+			log.info("wallet backed up to: '{}', took {}", Constants.Files.WALLET_KEY_BACKUP_PROTOBUF, watch);
 		}
 		catch (final IOException x)
 		{
-			log.error("problem writing key backup", x);
+			log.error("problem writing wallet backup", x);
 		}
 		finally
 		{
@@ -423,17 +431,6 @@ public class WalletApplication extends Application
 			{
 				// swallow
 			}
-		}
-	}
-
-	private void migrateBackup()
-	{
-		if (!getFileStreamPath(Constants.Files.WALLET_KEY_BACKUP_PROTOBUF).exists())
-		{
-			log.info("migrating automatic backup to protobuf");
-
-			// make sure there is at least one recent backup
-			backupWallet();
 		}
 	}
 

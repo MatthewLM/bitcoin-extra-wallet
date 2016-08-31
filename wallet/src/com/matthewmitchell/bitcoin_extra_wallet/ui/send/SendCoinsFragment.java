@@ -1614,13 +1614,16 @@ public final class SendCoinsFragment extends Fragment
 
         if (wallet.isEncrypted()) {
 
-            new DeriveKeyTask(backgroundHandler) {
-                @Override
-				protected void onSuccess(KeyParameter encryptionKey)
+			new DeriveKeyTask(backgroundHandler)
+			{
+				@Override
+				protected void onSuccess(final KeyParameter encryptionKey, final boolean wasChanged)
 				{
+					if (wasChanged)
+						application.backupWallet();
 					signAndSendPayment(encryptionKey);
 				}
-			}.deriveKey(wallet.getKeyCrypter(), privateKeyPasswordView.getText().toString().trim());
+			}.deriveKey(wallet, privateKeyPasswordView.getText().toString().trim());
 
 			setState(State.DECRYPTING);
 		}

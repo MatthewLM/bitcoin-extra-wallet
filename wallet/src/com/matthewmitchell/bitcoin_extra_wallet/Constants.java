@@ -53,6 +53,9 @@ public final class Constants
 		/** Filename of the wallet. */
 		public static final String WALLET_FILENAME_PROTOBUF = "wallet-protobuf" + FILENAME_NETWORK_SUFFIX;
 
+		/** How often the wallet is autosaved. */
+		public static final long WALLET_AUTOSAVE_DELAY_MS = 5 * DateUtils.SECOND_IN_MILLIS;
+
 		/** Filename of the automatic key backup (old format, can only be read). */
 		public static final String WALLET_KEY_BACKUP_BASE58 = "key-backup-base58" + FILENAME_NETWORK_SUFFIX;
 
@@ -167,4 +170,8 @@ public final class Constants
 	public static final int NOTIFICATION_ID_CONNECTED = 0;
 	public static final int NOTIFICATION_ID_COINS_RECEIVED = 1;
 	public static final int NOTIFICATION_ID_INACTIVITY = 2;
+
+	/** Desired number of scrypt iterations for deriving the spending PIN */
+	public static final int SCRYPT_ITERATIONS_TARGET = 65536;
+
 }

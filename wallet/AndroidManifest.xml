@@ -3,8 +3,8 @@
 	xmlns:tools="http://schemas.android.com/tools"
 	package="com.matthewmitchell.bitcoin_extra_wallet"
 	android:installLocation="internalOnly"
-	android:versionCode="258"
-	android:versionName="4.68" >
+	android:versionCode="259"
+	android:versionName="4.69" >
 
 	<uses-sdk
 		android:minSdkVersion="15"

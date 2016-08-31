@@ -54,6 +54,7 @@ import android.provider.BaseColumns;
 import android.text.format.DateUtils;
 
 import com.google.common.base.Charsets;
+import com.google.common.base.Stopwatch;
 import com.google.common.base.Strings;
 
 import com.matthewmitchell.bitcoin_extra_wallet.util.GenericUtils;
@@ -281,13 +282,15 @@ public class ExchangeRatesProvider extends ContentProvider
 
 	private static Map<String, ExchangeRate> requestExchangeRates(final URL url, final String userAgent, final String source, final String... fields)
 	{
-		final long start = System.currentTimeMillis();
 
 		HttpURLConnection connection = null;
 		Reader reader = null;
 
 		try
 		{
+
+			final Stopwatch watch = Stopwatch.createStarted();
+
 			connection = (HttpURLConnection) url.openConnection();
 
 			connection.setInstanceFollowRedirects(false);
@@ -346,8 +349,8 @@ public class ExchangeRatesProvider extends ContentProvider
 					}
 				}
 
-				log.info("fetched exchange rates from {} ({}), {} chars, took {} ms", url, contentEncoding, length, System.currentTimeMillis()
-						- start);
+				watch.stop();
+				log.info("fetched exchange rates from {} ({}), {} chars, took {}", url, contentEncoding, length, watch);
 
 				return rates;
 			}
